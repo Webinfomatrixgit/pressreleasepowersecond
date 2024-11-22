@@ -32,15 +32,12 @@ use App\Http\Controllers\Frontend\ArticleController;
 | and email-verified before accessing these routes.
 */
 
-
-// Route::get('/article', function (Request $request) {
-//     return "Hello";
-// });
 // User Profile and Dashboard
 Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth', 'check.status:web', 'verified', '2fa']], function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('article', [ArticleController::class, 'details'])->name('article');
     Route::get('article/create', [ArticleController::class, 'addArticle'])->name('article.create');
+    Route::post('article/add', [ArticleController::class, 'addArticleF'])->name('article.add');
 
     // Profile Management Routes
     Route::group(['prefix' => 'profile', 'as' => 'profile.', 'controller' => ProfileController::class], function () {

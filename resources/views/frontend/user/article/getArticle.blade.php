@@ -8,7 +8,7 @@
                     <thead class="table-light">
                     <tr>
                         <th>{{ __('id') }}</th>
-                        <th>{{ __('title') }}</th>
+                        <th>{{ __('Press Release Name') }}</th>
                         <th>{{ __('content') }}</th>
                         <th>{{ __('description') }}</th>
                         <th>{{ __('alt tag') }}</th>
